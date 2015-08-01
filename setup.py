@@ -30,11 +30,14 @@ install_requires = [
     'requests >= 2.6.1, < 2.7',
     'texttable >= 0.8.1, < 0.9',
     'websocket-client >= 0.32.0, < 1.0',
-    'docker-py >= 1.3.1, < 1.4',
+    'docker-py >= 1.3.2-dev, < 1.4',
     'dockerpty >= 0.3.4, < 0.4',
     'six >= 1.3.0, < 2',
 ]
 
+dependency_links = [
+    'http://github.com/erikced/docker-py/tarball/master#egg=docker-py-1.3.2-dev'
+]
 
 tests_require = [
     'mock >= 1.0.1',
@@ -58,6 +61,7 @@ setup(
     packages=find_packages(exclude=['tests.*', 'tests']),
     include_package_data=True,
     test_suite='nose.collector',
+    dependency_links=dependency_links,
     install_requires=install_requires,
     tests_require=tests_require,
     entry_points="""
